@@ -1,8 +1,12 @@
 body {
     background-color: #2BD9FE;
-
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
 
+}
+h1, h2, h3 { 
+    padding: 0; 
+    margin: 0;
 }
 .card-container { 
     background-color: #FBFBFF; 
@@ -30,6 +34,37 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 5px 15px; 
     border-radius: 20px; 
     color: white; 
-    border: none; 
+    border: none;
+    text-decoration: none; 
 
+}
+
+.header { 
+    background-color: #1A8FE3;
+    color: white; 
+    height: 100px; 
+    width: 100%; 
+
+}
+.contain-all-spaces { 
+    display: flex; 
+    justify-content: flex-start;
+    margin: 30px auto;
+
+}
+.spaces-container { 
+    width: 30%;
+    background-color: white; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    margin: 10px; 
+    text-align: center;
+    padding: 15px;
+}
+
+.heading {
+   padding: 15px; 
+}
+
+.additional-text {
+    padding: 15px;
 }
