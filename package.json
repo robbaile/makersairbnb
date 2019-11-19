@@ -1,0 +1,41 @@
+{
+  "name": "makersbnb",
+  "version": "1.0.0",
+  "description": "Team 1 makersbnb repository",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbaile/makersbnb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robbaile/makersbnb/issues"
+  },
+  "homepage": "https://github.com/robbaile/makersbnb#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "i": "^0.3.6",
+    "morgan": "^1.9.1",
+    "nodeman": "^1.1.2",
+    "nodemon": "^1.19.4",
+    "pg": "^7.12.1",
+    "pg-promise": "^10.2.1",
+    "sequelize": "^5.21.2"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
