@@ -79,7 +79,9 @@ app.get("/welcome", (req, res) => {
     res.redirect("/");
     next();
   }
-  db.many("SELECT * from spaces").then(res.render("welcome"));
+  db.many("SELECT * from spaces").then((spaces) => {
+    res.render("welcome", {spaces: spaces})
+  });
 });
 
 app.get("/test", (req, res) => {
