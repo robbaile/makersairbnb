@@ -1,7 +1,7 @@
 const express = require("express");
 const User = require("./src/User");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 const port = 3000;
 var hbs = require("express-handlebars");
@@ -9,7 +9,7 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var morgan = require("morgan");
 
-const pgp = require('pg-promise')();
+const pgp = require("pg-promise")();
 const cn = "postgres://postgres:postgres@localhost:5432/makersbnb";
 const db = pgp(cn);
 
@@ -20,10 +20,10 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 // let us set and retrieve cookies for user auth:
-app.use(cookieParser())
+app.use(cookieParser());
 
 // turn forms in requests to something we can work with:
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "hbs");
 
@@ -41,52 +41,55 @@ app.get("/", (req, res) => res.render("login"));
 
 app.get("/signup", (req, res) => res.render("signup"));
 
-app.post("/signup", (req,res) => {
-  if(req.cookies.userId) {
-    res.redirect("/welcome")
+app.post("/signup", (req, res) => {
+  if (req.cookies.userId) {
+    res.redirect("/welcome");
   }
-  db.none("INSERT INTO users (email, password, username) VALUES ($1, crypt($2, gen_salt('bf')), $3);", [req.body.email, req.body.password, req.body.username])
+  db.none(
+    "INSERT INTO users (email, password, username) VALUES ($1, crypt($2, gen_salt('bf')), $3);",
+    [req.body.email, req.body.password, req.body.username]
+  )
     .then(() => {
-      res.redirect('/'); 
-    }).catch(() => {
-      res.send('error');
-    });
-})
-
-app.post("/login", (req, res) => {
-  if(req.cookies.userId) {
-    res.redirect("/welcome")
-  }
-  db.one("SELECT * from users WHERE username=$1 AND password=crypt($2, password);;", [req.body.username, req.body.password])
-    .then((user) => {
-      if(user) {
-        res.cookie('userId', user.id)
-        res.redirect("/welcome")
-      }
+      res.redirect("/");
     })
-    .catch(() => res.send("No details found"))
+    .catch(() => {
+      res.send("error");
+    });
 });
 
+app.post("/login", (req, res) => {
+  if (req.cookies.userId) {
+    res.redirect("/welcome");
+  }
+  db.one(
+    "SELECT * from users WHERE username=$1 AND password=crypt($2, password);;",
+    [req.body.username, req.body.password]
+  )
+    .then(user => {
+      if (user) {
+        res.cookie("userId", user.id);
+        res.redirect("/welcome");
+      }
+    })
+    .catch(() => res.send("No details found"));
+});
 
-app.get("/welcome", async (req, res) => {
-  db.many("SELECT * from spaces")
-    .then((spaces) => {
-        res.render("welcome", { spaces: spaces});
-    }).catch(() => res.send("No spaces found")) 
+app.get("/welcome", (req, res) => {
+  if (!req.cookies.userId) {
+    res.redirect("/");
+    next();
+  }
+  db.many("SELECT * from spaces").then(res.render("welcome"));
 });
 
 app.get("/test", (req, res) => {
-  let user = new User("a", "b", "c");
-  res.render("test", { user: user });
+  res.render("test");
 });
 
-app.get("/logout", (req, res) => {
-  if (req.session.member && req.cookies.user_sid) {
-    res.clearCookie("user_sid");
-    res.redirect("/");
-  } else {
-    res.redirect("/login");
-  }
+app.get("/logout", function(req, res) {
+  req.session = null;
+  res.clearCookie("userId"); //Inside a callback… bulletproof!
+  res.redirect("/");
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
