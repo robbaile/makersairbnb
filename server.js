@@ -97,3 +97,7 @@ app.get("/details", function(req, res) {
   res.render("details")
 });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+app.get("/details2", function(req, res) { 
+  res.render("details2")
+});
