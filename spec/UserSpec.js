@@ -2,8 +2,12 @@
 
 describe('User', function(){
   var user;
+  var space;
   beforeEach(function(){
     user = new User('User Name', 'userpassword', 'user@testmail.com');
+    space = jasmine.createSpyObj('space',['setApproval']);
+    space.setApproval = jasmine.createSpy(space._approved = true);
+    
   });
 
   it('is an instance of User', function(){
@@ -24,9 +28,9 @@ describe('User', function(){
   });
 
   it('can list the spaces a User has to let', function(){
-    //test needs class to have ability to add an instance of Space to _properties
+    user.createSpace(space);
     user.getSpaces();
-    expect(user._properties).toEqual([]);
+    expect(user._properties).toEqual([space]);
   });
 
   it('can book a space', function(){
@@ -34,13 +38,15 @@ describe('User', function(){
     expect(user._bookings.length).toEqual(1);
   });
   
-  it('can list the spaces a User has booked', function(){
-    //test needs class to have ability to add an instance of Space to _bookings
+  it('User can book a space and list the spaces a User has booked', function(){
     user.bookSpace("test booking");
     user.getBookings();
     expect(user._bookings).toEqual(["test booking"]);
   });
 
-  
-
+  it('User can approve the booking of a space', function(){
+    user.bookSpace(space);
+    user.approveBooking(space);
+    expect(space._approved).toEqual(true);
+  });
 });

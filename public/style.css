@@ -2,31 +2,33 @@ body {
     background-color: #F6EFEE;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-
 }
+
 h1, h2, h3 { 
     padding: 0; 
     margin: 0;
 }
-.card-container { 
-    background-color: #FBFBFF; 
-max-width: 600px;
-max-height: 270px; 
-position: absolute; 
-top: 0; 
-bottom: 0;
-left: 0;
-right: 0; 
-margin: auto; 
-text-align: center;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
+.card-container { 
+    background-color: #fbfbff; 
+    max-width: 700px;
+    max-height: 300px; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    margin: auto; 
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
 .card-input { 
     border: none;
     border-bottom: 2px #545454 solid; 
     width: 100px; 
 }
+
 .card-button { 
     background-color: #7EA172;
     font-family: 'Montserrat', sans-serif;
@@ -36,7 +38,6 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     color: white; 
     border: none;
     text-decoration: none; 
-
 }
 
 .header { 
@@ -50,12 +51,13 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     top: 50px;
 
 }
+
 .contain-all-spaces { 
     display: flex; 
     justify-content: flex-start;
     margin: 30px auto;
-
 }
+
 .spaces-container { 
     width: 30%;
     background-color: white; 
