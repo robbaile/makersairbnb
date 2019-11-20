@@ -98,14 +98,13 @@ app.post("/login", (req, res, next) => {
   }
 });
 
-app.get("/welcome", (req, res, next) => {
+app.get("/welcome", async (req, res, next) => {
   if (!req.session.username) {
     res.redirect("/");
     next();
   } else {
-      db.many("SELECT * from spaces").then((spaces) => {
-      res.render("welcome", { spaces: spaces })
-    }).catch((err) => console.log(err))
+    var spaces = await db.query("SELECT * from spaces");
+    res.render("welcome", { spaces: spaces });
   }
 });
 
