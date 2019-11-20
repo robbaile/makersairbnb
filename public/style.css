@@ -28,7 +28,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     width: 100px; 
 }
 .card-button { 
-    background-color: #1A8FE3;
+    background-color: #7EA172;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px; 
     padding: 5px 15px; 
@@ -40,10 +40,14 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .header { 
-    background-color: #1A8FE3;
+    background-color: #A69CAC;
     color: white; 
     height: 100px; 
     width: 100%; 
+    border-radius: 20px;
+    max-width: 600px;
+    border: 10px;
+    
 
 }
 .contain-all-spaces { 
