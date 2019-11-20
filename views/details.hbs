@@ -16,6 +16,13 @@
 
             <div class="avalibility-container" >
                 <p> This is the Availability!</p>
+                {{#if data.booking}}
+                {{#each data.booking}}
+                  <p>start: {{this.startdate}}</p>
+                  <p>end: {{this.enddate}}</p>
+
+                {{/each}}
+                {{/if}}
                 <p> <img src="../images/calendar.png" alt="calendar image"></p>
             </div> 
     </div>
