@@ -1,5 +1,5 @@
 body {
-    background-color: #2BD9FE;
+    background-color: #F6EFEE;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -11,16 +11,15 @@ h1, h2, h3 {
 
 .card-container { 
     background-color: #FBFBFF; 
-    max-width: 700px;
-    max-height: 300px; 
-    position: absolute; 
-    top: 0; 
-    bottom: 0;
-    left: 0;
-    right: 0; 
-    margin: auto; 
-    text-align: center;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  max-width: 600px;
+  max-height: 270px; 
+  position: absolute; 
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  margin: auto; 
+  text-align: center;
 }
 
 .card-input { 
@@ -30,7 +29,7 @@ h1, h2, h3 {
 }
 
 .card-button { 
-    background-color: #1A8FE3;
+    background-color: #7EA172;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px; 
     padding: 5px 15px; 
@@ -41,10 +40,14 @@ h1, h2, h3 {
 }
 
 .header { 
-    background-color: #1A8FE3;
+    background-color: #A69CAC;
     color: white; 
     height: 100px; 
     width: 100%; 
+    border-radius: 20px;
+    max-width: 600px;
+    border: 10px;
+    top: 50px;
 }
 
 .contain-all-spaces { 
@@ -68,4 +71,70 @@ h1, h2, h3 {
 
 .additional-text {
     padding: 15px;
+}
+
+.detailscontainer { 
+background-color: #FBFBFF; 
+height: 1000px;
+max-width: 1000px;
+max-height: 1000px; 
+position: absolute; 
+top: 50%; 
+bottom: 0;
+left: 0;
+right: 0; 
+margin: auto; 
+text-align: center;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+.contain-all-details {
+    margin: 30px;
+    background-color: #E3DFFF;
+    padding: 10px; 
+    border: 30px C;
+    height: 400px;
+    max-width: 400px;
+    max-height: 500px
+
+}
+.amenities {
+    text-align: left;
+    font-size: small;
+    font-style: oblique
+}
+.details-text { 
+    text-align: left;
+    font-size: small;
+    font-style: oblique;
+}
+
+.avalibility-container { 
+    margin: 30px;
+    background-color: #E3DFFF;
+    padding: 10px; 
+    border: 30px C;
+    height: 400px;
+    max-width: 400px;
+    max-height: 500px
+
+}
+
+.details-flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+.img2 {
+    max-width: 40%;
+    height: 390px;
+    background-position: auto;
+    position: left;
+
 }

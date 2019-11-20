@@ -103,9 +103,25 @@ app.get("/welcome", (req, res, next) => {
     res.redirect("/");
     next();
   } else {
-    var spaces = db.many("SELECT * from spaces");
-    res.render("welcome", { spaces: spaces });
+      db.many("SELECT * from spaces").then((spaces) => {
+      res.render("welcome", { spaces: spaces })
+    }).catch((err) => console.log(err))
   }
+});
+
+app.get("/spaces/:id", (req,res) => {
+      var spaceId = req.params.id;   
+      getSpaceInfo = () => db.one("SELECT * FROM spaces WHERE id=$1", [spaceId]).then(data => data).catch(() => "no data");
+      getBookingInfo = () => db.manyOrNone("SELECT * FROM bookings WHERE spacesId=$1", [spaceId]).then(data => {return data}).catch(() => "no data");
+
+    db.task(async spaceId => {
+      const space = await getSpaceInfo(spaceId);
+      const booking = await getBookingInfo(spaceId);
+      return {space, booking};
+   })
+   .then(data => {
+       res.send(data);
+   }).catch((err) => err)
 });
 
 app.get("/test", (req, res) => {
@@ -118,4 +134,6 @@ app.get("/logout", function(req, res) {
   res.redirect("/");
 });
 
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
