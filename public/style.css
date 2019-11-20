@@ -84,10 +84,9 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 }
 
-.contain-all-details { 
+.contain-all-details {
     margin: 30px;
     background-color: #E3DFFF;
-    position: absolute;
     padding: 10px; 
     border: 30px C;
     height: 500px;
@@ -98,5 +97,26 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 .amenities {
     text-align: left;
     font-size: small;
-    color: red;
+    font-style: oblique
+}
+.details-text { 
+    text-align: left;
+    font-size: small;
+    font-style: oblique;
+}
+
+.avalibility-container { 
+    margin: 30px;
+    background-color: #E3DFFF;
+    padding: 10px; 
+    border: 30px C;
+    height: 500px;
+    max-width: 400px;
+    max-height: 500px
+
+}
+
+.details-flex-container {
+    display: flex;
+    justify-content: space-around;
 }
