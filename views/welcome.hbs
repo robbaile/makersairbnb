@@ -4,9 +4,12 @@
 
     {{#each spaces}}
     <div class="spaces-container">
-        <li>{{this.name}}</li>
-        <li>{{this.description}}</li>
-        <li>£{{this.cost}}</li>
+        <img src="./images/house.jpeg" alt="house image">
+        <p>
+            <h3>{{this.name}}</h3>
+            <p>{{this.description}}</p>
+            <p>£{{this.cost}}</p>
+            <a href="spaces/{{this.id}}" class="card-button"> view more</a>
     </div>
     {{/each}}
     {{/if}}
