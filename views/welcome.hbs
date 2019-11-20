@@ -1,16 +1,16 @@
-<body>
-    <h1>Properties</h1>
-    {{#if spaces}}
+<h1>Properties</h1>
 
+
+<div class="contain-all-spaces">
+    {{#if spaces}}
     {{#each spaces}}
     <div class="spaces-container">
         <img src="./images/house.jpeg" alt="house image">
-        <p>
-            <h3>{{this.name}}</h3>
-            <p>{{this.description}}</p>
-            <p>£{{this.cost}}</p>
-            <a href="spaces/{{this.id}}" class="card-button"> view more</a>
+        <h3>{{this.name}}</h3>
+        <p>{{this.description}}</p>
+        <p>£{{this.cost}}</p>
+        <a href="spaces/{{this.id}}" class="card-button"> view more</a>
     </div>
     {{/each}}
     {{/if}}
-</body>
+</div>

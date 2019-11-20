@@ -84,8 +84,9 @@ app.get("/welcome", (req, res) => {
     res.redirect("/");
     next();
   }
-  var spaces = db.many("SELECT * from spaces");
-  res.render("welcome", { spaces: spaces });
+  db.many("SELECT * from spaces").then((spaces) => {
+    res.render("welcome", { spaces: spaces })
+  }).catch((err) => console.log(err))
 });
 
 app.get("/spaces/:id", (req,res) => {
