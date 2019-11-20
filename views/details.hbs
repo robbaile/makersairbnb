@@ -1,32 +1,22 @@
 <div class = "detailscontainer">
     <h1>Sarah's Castle</h1>
-<img class = "img" src="./images/1.jpg" alt="house image">
+<img class = "img" src="../images/1.jpg" alt="house image">
     <div class="details-flex-container">
         <div class = "contain-all-details">
-            <p>"Sarah Castle"</p>
+            <p>{{data.space.name}}</p>
             <p>Details </p>
             <p class = "details-text">
-            Lorem ipsum lorem ipsum lorem ipsum lorem 
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+              {{data.space.description}}
             </p>
             <h3>Amenties</h3>
             <p class="amenities">
-                (From DB)
-            There is no bathroom 
-            or toilet 
-            its not real .. 
-            Lorem ipsum lorem ipsum lorem ipsum lorem 
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+              £{{data.space.cost}}
             </p>  
         </div>
 
             <div class="avalibility-container" >
                 <p> This is the Availability!</p>
-                <p> <img src="./images/calendar.png" alt="calendar image"></p>
+                <p> <img src="../images/calendar.png" alt="calendar image"></p>
             </div> 
     </div>
     

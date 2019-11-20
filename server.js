@@ -120,12 +120,16 @@ app.get("/spaces/:id", (req,res) => {
       return {space, booking};
    })
    .then(data => {
-       res.send(data);
+       res.render("details", {data: data});
    }).catch((err) => err)
 });
 
 app.get("/test", (req, res) => {
   res.render("test");
+});
+
+app.get("/details", (req, res) => {
+  res.render("details");
 });
 
 app.get("/logout", function(req, res) {
