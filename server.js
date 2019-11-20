@@ -69,6 +69,7 @@ app.post("/login", (req, res) => {
       if (user) {
         res.cookie("userId", user.id);
         res.redirect("/welcome");
+        next();
       }
     })
     .catch(() => res.send("No details found"));
@@ -79,10 +80,13 @@ app.get("/welcome", (req, res) => {
     res.redirect("/");
     next();
   }
-  db.many("SELECT * from spaces").then((spaces) => {
-    res.render("welcome", {spaces: spaces})
-  });
+  var spaces = db.many("SELECT * from spaces");
+  res.render("welcome", { spaces: spaces });
 });
+
+// db.many("SELECT * from spaces").then(spaces => {
+//   res.render("welcome", { spaces: spaces });
+// });
 
 app.get("/test", (req, res) => {
   res.render("test");
@@ -90,7 +94,7 @@ app.get("/test", (req, res) => {
 
 app.get("/logout", function(req, res) {
   req.session = null;
-  res.clearCookie("userId"); //Inside a callback… bulletproof!
+  res.clearCookie("userId");
   res.redirect("/");
 });
 

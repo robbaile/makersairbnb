@@ -1,5 +1,7 @@
 <body>
     <h1>Properties</h1>
+    {{#if spaces}}
+
     {{#each spaces}}
     <div class="spaces-container">
         <li>{{this.name}}</li>
@@ -7,6 +9,5 @@
         <li>£{{this.cost}}</li>
     </div>
     {{/each}}
-
-
+    {{/if}}
 </body>
