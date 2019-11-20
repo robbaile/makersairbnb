@@ -88,9 +88,27 @@ app.get("/welcome", (req, res) => {
   res.render("welcome", { spaces: spaces });
 });
 
+
+
+app.get("/spaces/:id", (req,res) => {
+      var spaceId = req.params.id;   
+      getSpaceInfo = () => db.one("SELECT * FROM spaces WHERE id=$1", [spaceId]).then(data => data).catch(() => "no data");
+      getBookingInfo = () => db.manyOrNone("SELECT * FROM bookings WHERE spacesId=$1", [spaceId]).then(data => {return data}).catch(() => "no data");
+
+    db.task(async spaceId => {
+      const space = await getSpaceInfo(spaceId);
+      const booking = await getBookingInfo(spaceId);
+      return {space, booking};
+   })
+   .then(data => {
+       res.send(data);
+   }).catch((err) => err)
+});
+
 // db.many("SELECT * from spaces").then(spaces => {
 //   res.render("welcome", { spaces: spaces });
 // });
+
 
 app.get("/test", (req, res) => {
   res.render("test");
