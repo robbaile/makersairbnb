@@ -38,11 +38,11 @@ app.engine(
 );
 
 app.get("/", (req, res) => {
-  res.render("login")
+  res.render("login");
 });
 
 app.get("/signup", (req, res) => {
-  res.render("signup")
+  res.render("signup");
 });
 
 app.post("/signup", (req, res) => {
@@ -88,13 +88,9 @@ app.get("/welcome", (req, res) => {
   res.render("welcome", { spaces: spaces });
 });
 
-<<<<<<< HEAD
 // db.many("SELECT * from spaces").then(spaces => {
 //   res.render("welcome", { spaces: spaces });
 // });
-=======
-
->>>>>>> c02732a5a186598b7697d8aae429ec9e12bfa29e
 
 app.get("/test", (req, res) => {
   res.render("test");
