@@ -21,6 +21,6 @@ CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     startDate DATE NOT NULL,
     endDate DATE NOT NULL,
-    userId int FOREIGN KEY REFERENCES users(id)
+    userId int FOREIGN KEY REFERENCES users(id),
     spacesId int FOREIGN KEY REFERENCES spaces(id)
 );
