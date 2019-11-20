@@ -17,10 +17,5 @@ We now need to run some other commands to keep our database working
 ALTER TABLE spaces ADD COLUMN userId int;
 ALTER TABLE spaces ADD FOREIGN KEY (userId) REFERENCES users(id);
 
-CREATE TABLE bookings (
-    id SERIAL PRIMARY KEY,
-    startDate DATE NOT NULL,
-    endDate DATE NOT NULL,
-    userId int FOREIGN KEY REFERENCES users(id),
-    spacesId int FOREIGN KEY REFERENCES spaces(id)
-);
+CREATE TABLE bookings (id SERIAL PRIMARY KEY, startDate DATE NOT NULL, endDate DATE NOT NULL, userId int, spacesId int, FOREIGN KEY (spacesId) REFERENCES spaces(id), FOREIGN KEY (userId) REFERENCES users(id));
+
