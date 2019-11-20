@@ -22,7 +22,7 @@ describe('Feature Test:', function(){
   it('can allow a User to approve the booking of a Space', function(){
     user.createSpace(space);
     user.approveBooking(space);
-    expect(space._approved).toEqual(true)
+    expect(space._approved).toEqual(true);
   });
 
   

@@ -1,17 +1,18 @@
-<p> <div class="header"> 
+<div class="header"> 
     <h1 class="heading" >Book your stay on MakersBnb</h1>
     <p class="additional-text"> boom... </p>
-</div> </p>
-    
+</div>
+
 <div class="contain-all-spaces">
+    {{#if spaces}}
     {{#each spaces}}
-        <div class="spaces-container">
-            <img src="./images/house.jpeg" alt="house image">
-            <p>
-            <h3>{{this.name}}</h3>
-            <p>{{this.description}}</p>
-            <p>£{{this.cost}}</p>
-            <a href="spaces/{{this.id}}" class="card-button"> view more</a>
-        </div>
+    <div class="spaces-container">
+        <img src="./images/house.jpeg" alt="house image">
+        <h3>{{this.name}}</h3>
+        <p>{{this.description}}</p>
+        <p>£{{this.cost}}</p>
+        <a href="spaces/{{this.id}}" class="card-button"> view more</a>
+    </div>
     {{/each}}
+    {{/if}}
 </div>

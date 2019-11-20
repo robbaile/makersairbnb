@@ -37,9 +37,13 @@ app.engine(
   })
 );
 
-app.get("/", (req, res) => res.render("login"));
+app.get("/", (req, res) => {
+  res.render("login");
+});
 
-app.get("/signup", (req, res) => res.render("signup"));
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
 
 app.post("/signup", (req, res) => {
   if (req.cookies.userId) {
@@ -69,6 +73,7 @@ app.post("/login", (req, res) => {
       if (user) {
         res.cookie("userId", user.id);
         res.redirect("/welcome");
+        next();
       }
     })
     .catch(() => res.send("No details found"));
@@ -80,8 +85,23 @@ app.get("/welcome", (req, res) => {
     next();
   }
   db.many("SELECT * from spaces").then((spaces) => {
-    res.render("welcome", {spaces: spaces})
-  });
+    res.render("welcome", { spaces: spaces })
+  }).catch((err) => console.log(err))
+});
+
+app.get("/spaces/:id", (req,res) => {
+      var spaceId = req.params.id;   
+      getSpaceInfo = () => db.one("SELECT * FROM spaces WHERE id=$1", [spaceId]).then(data => data).catch(() => "no data");
+      getBookingInfo = () => db.manyOrNone("SELECT * FROM bookings WHERE spacesId=$1", [spaceId]).then(data => {return data}).catch(() => "no data");
+
+    db.task(async spaceId => {
+      const space = await getSpaceInfo(spaceId);
+      const booking = await getBookingInfo(spaceId);
+      return {space, booking};
+   })
+   .then(data => {
+       res.send(data);
+   }).catch((err) => err)
 });
 
 app.get("/test", (req, res) => {
@@ -90,14 +110,10 @@ app.get("/test", (req, res) => {
 
 app.get("/logout", function(req, res) {
   req.session = null;
-  res.clearCookie("userId"); //Inside a callback… bulletproof!
+  res.clearCookie("userId");
   res.redirect("/");
 });
-app.get("/details", function(req, res) { 
-  res.render("details")
-});
+
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-app.get("/details2", function(req, res) { 
-  res.render("details2")
-});
