@@ -88,8 +88,6 @@ app.get("/welcome", (req, res) => {
   res.render("welcome", { spaces: spaces });
 });
 
-
-
 app.get("/spaces/:id", (req,res) => {
       var spaceId = req.params.id;   
       getSpaceInfo = () => db.one("SELECT * FROM spaces WHERE id=$1", [spaceId]).then(data => data).catch(() => "no data");
@@ -104,11 +102,6 @@ app.get("/spaces/:id", (req,res) => {
        res.send(data);
    }).catch((err) => err)
 });
-
-// db.many("SELECT * from spaces").then(spaces => {
-//   res.render("welcome", { spaces: spaces });
-// });
-
 
 app.get("/test", (req, res) => {
   res.render("test");
