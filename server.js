@@ -93,5 +93,7 @@ app.get("/logout", function(req, res) {
   res.clearCookie("userId"); //Inside a callback… bulletproof!
   res.redirect("/");
 });
-
+app.get("/details", function(req, res) { 
+  res.render("details")
+});
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
