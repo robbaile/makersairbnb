@@ -37,9 +37,13 @@ app.engine(
   })
 );
 
-app.get("/", (req, res) => res.render("login"));
+app.get("/", (req, res) => {
+  res.render("login")
+});
 
-app.get("/signup", (req, res) => res.render("signup"));
+app.get("/signup", (req, res) => {
+  res.render("signup")
+});
 
 app.post("/signup", (req, res) => {
   if (req.cookies.userId) {
@@ -83,6 +87,8 @@ app.get("/welcome", (req, res) => {
     res.render("welcome", {spaces: spaces})
   });
 });
+
+
 
 app.get("/test", (req, res) => {
   res.render("test");
