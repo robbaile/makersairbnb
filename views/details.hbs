@@ -13,9 +13,10 @@
               £{{data.space.cost}}
             </p>  
         </div>
-
+ 
             <div class="avalibility-container" >
-                <p> This is the Availability!</p>
+                <p> Choose dates to book :!</p>
+{{!--                 
                 {{#if data.booking}}
                 {{#each data.booking}}
                   <p>start: {{this.startdate}}</p>
@@ -23,8 +24,15 @@
 
                 {{/each}}
                 {{/if}}
-                <p> <img src="../images/calendar.png" alt="calendar image"></p>
-            </div> 
+                <p> <img src="../images/calendar.png" alt="calendar image"></p> --}} 
+            <form> 
+                <form action="/details">
+                 <input id ="check-in" type="date" name="check-in">
+                 <input id = "check-out" type="date" name="check-out">
+                <input type="submit" value="Book">
+            </form>
+            <p id="pricing-container"></p>
+        </div> 
     </div>
     
 
@@ -53,3 +61,28 @@
 
 </div>
 
+<script > 
+    const checkIn = document.querySelector('#check-in');
+    const checkOut = document.querySelector('#check-out');
+    const pricingContainer = document.querySelector('#pricing-container');
+    const price = {{{data.space.cost}}}
+
+    checkIn.addEventListener('change', update);
+    checkOut.addEventListener('change', update);
+
+
+    function update(a) {
+  if (checkIn.value && checkOut.value !== "") { 
+    console.log(`start date: ${checkIn.value}, end date: ${checkOut.value}`);
+
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const firstDate = new Date (checkIn.value)
+    const secondDate = new Date(checkOut.value);
+    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    pricingContainer.innerHTML = `<p>You have selected ${diffDays} nights at £${price} per night</p>`
+  } 
+
+}
+
+
+</script>
