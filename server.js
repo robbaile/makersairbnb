@@ -38,11 +38,11 @@ app.engine(
 );
 
 app.get("/", (req, res) => {
-  res.render("login")
+  res.render("login");
 });
 
 app.get("/signup", (req, res) => {
-  res.render("signup")
+  res.render("signup");
 });
 
 app.post("/signup", (req, res) => {
@@ -73,6 +73,7 @@ app.post("/login", (req, res) => {
       if (user) {
         res.cookie("userId", user.id);
         res.redirect("/welcome");
+        next();
       }
     })
     .catch(() => res.send("No details found"));
@@ -83,10 +84,10 @@ app.get("/welcome", (req, res) => {
     res.redirect("/");
     next();
   }
-  db.many("SELECT * from spaces").then((spaces) => {
-    res.render("welcome", {spaces: spaces})
-  });
+  var spaces = db.many("SELECT * from spaces");
+  res.render("welcome", { spaces: spaces });
 });
+
 
 
 app.get("/spaces/:id", (req,res) => {
@@ -104,6 +105,10 @@ app.get("/spaces/:id", (req,res) => {
    }).catch((err) => err)
 });
 
+// db.many("SELECT * from spaces").then(spaces => {
+//   res.render("welcome", { spaces: spaces });
+// });
+
 
 app.get("/test", (req, res) => {
   res.render("test");
@@ -111,7 +116,7 @@ app.get("/test", (req, res) => {
 
 app.get("/logout", function(req, res) {
   req.session = null;
-  res.clearCookie("userId"); //Inside a callback… bulletproof!
+  res.clearCookie("userId");
   res.redirect("/");
 });
 
