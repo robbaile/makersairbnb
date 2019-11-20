@@ -1,5 +1,5 @@
 body {
-    background-color: #2BD9FE;
+    background-color: #F6EFEE;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 
@@ -67,4 +67,36 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 .additional-text {
     padding: 15px;
+}
+
+.detailscontainer { 
+    background-color: #FBFBFF; 
+max-width: 1000px;
+max-height: 600px; 
+position: absolute; 
+top: 0; 
+bottom: 0;
+left: 0;
+right: 0; 
+margin: auto; 
+text-align: center;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+.contain-all-details { 
+    margin: 30px;
+    background-color: #E3DFFF;
+    position: absolute;
+    padding: 10px; 
+    border: 30px C;
+    height: 500px;
+    max-width: 400px;
+    max-height: 500px
+
+}
+.amenities {
+    text-align: left;
+    font-size: small;
+    color: red;
 }
