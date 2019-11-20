@@ -71,6 +71,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 .detailscontainer { 
     background-color: #FBFBFF; 
+    height: 1000px;
 max-width: 1000px;
 max-height: 1000px; 
 position: absolute; 
@@ -121,3 +122,10 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     justify-content: space-around;
 }
 
+<<<<<<< HEAD
+=======
+.img {
+    max-width: 100%;
+    height: auto;
+}
+>>>>>>> 3e5c38b37ec31b8fa4f889f99941f395964f4a13
