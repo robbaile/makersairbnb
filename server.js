@@ -90,6 +90,7 @@ app.post("/login", (req, res, next) => {
       .then(user => {
         if (user) {
           req.session.username = req.body.username;
+          req.session.userId = user.id;
           res.redirect("/welcome");
           next();
         }
@@ -133,9 +134,19 @@ app.get("/details", (req, res) => {
 
 app.get("/logout", function(req, res) {
   req.session.username = null;
+  req.session.userId = null;
   res.clearCookie("userId");
   res.redirect("/");
 });
+
+app.post("/spaces/:id/book", (req, res) => {
+  db.none(
+    "INSERT INTO bookings (startdate, enddate, userId, spacesId) VALUES ($1, $2, $3, $4);",
+    [req.body.checkIn, req.body.checkOut, req.session.userId, req.params.id]
+  ).then(() => {
+    res.redirect("/welcome")
+  }).catch(() => res.send("Could not book"))
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
