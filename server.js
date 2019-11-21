@@ -155,7 +155,6 @@ app.get("/successful", (req, res) => {
 app.get("/my-properties", (req, res) => {
   if (!req.session.username) {
     res.redirect("/");
-    next();
   } else {
     db.many("SELECT * FROM spaces WHERE userId=$1", [req.session.userId])
       .then((data) => res.send(data))
@@ -168,7 +167,6 @@ app.get("/my-properties", (req, res) => {
 app.get("/my-bookings", (req, res) => {
   if (!req.session.username) {
     res.redirect("/");
-    next();
   } else {
     db.many("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
       .then((data) => res.send(data))
