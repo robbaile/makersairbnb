@@ -331,3 +331,43 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
       right: 0;
       width: 100%;
   }
+
+  .image-suitcase {
+      height: 200px;
+      width: 100%;
+      margin-top: 50px;
+  }
+  .suitcaseText {
+      text-align: center;
+      font-size: 18px;
+     letter-spacing: 5px;
+  }
+  .suitcaseText1 {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin: 30px;
+}
+.success-button { 
+    background-color: #7EA172;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; 
+    padding: 5px 15px; 
+    border-radius: 20px; 
+    color: #DDDDDD; 
+    border: none;
+    text-decoration: none; 
+    text-align: center;
+    width: 150px;
+    margin: 50px auto;
+}
+
+.success-link {
+    color: #DDDDDD;
+    text-decoration: none;
+}
+
+.success-link:hover {
+    color: #545454;
+    text-decoration: none;
+}
