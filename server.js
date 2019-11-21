@@ -144,9 +144,13 @@ app.post("/spaces/:id/book", (req, res) => {
     "INSERT INTO bookings (startdate, enddate, userId, spacesId) VALUES ($1, $2, $3, $4);",
     [req.body.checkIn, req.body.checkOut, req.session.userId, req.params.id]
   ).then(() => {
-    res.redirect("/welcome")
+    res.redirect("/successful")
   }).catch(() => res.send("Could not book"))
 })
+
+app.get("/successful", (req, res) => {
+  res.render("successful");
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
