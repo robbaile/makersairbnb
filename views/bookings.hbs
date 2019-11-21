@@ -1,0 +1,18 @@
+<div class="header"> 
+    <h1 class="heading" >Your bookings</h1>
+    <p class="additional-text">  </p>
+</div>
+
+<div class="contain-all-spaces">
+    {{#if bookings}}
+    {{#each bookings}}
+    <div class="spaces-container">
+        <img src="./images/house.jpeg" alt="house image">
+        <h3>{{this.startdate}}</h3>
+        <p>{{this.enddate}}</p>
+        <p>£{{this.cost}}</p>
+        <a href="spaces/{{this.id}}" class="card-button"> view more</a>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
