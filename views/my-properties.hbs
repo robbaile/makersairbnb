@@ -17,8 +17,27 @@
     </div>
   </div>
 </nav>
-<a href="/my-properties/add">Add a new property</a>
+
 <div class="contain-all-spaces">
+
+<div class="spaces-container"> 
+    <h3> Create a Listing</h3>
+    <br> </br>
+
+<form method="POST" action="/my-properties/add">
+    Property's name:<br>
+    <input type="text" name="name" placeholder="your name">
+    <br><br>
+    Describe your property:<br>
+    <input type="text" name="description" placeholder="description">
+    <br><br>
+    Price per night: <br>
+    <input type="text" name="cost" placeholder="£">
+    <br><br>
+    <input type="submit" value="List your Space">
+</form>
+</div>
+
     {{#if spaces}}
     {{#each spaces}}
     <div class="spaces-container">
