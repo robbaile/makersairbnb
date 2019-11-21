@@ -19,14 +19,17 @@
   </div>
 </nav>
 
-<div class="booking-header" > book your stay on MAKERsBnB</div>
+<div class="booking-header">
+  <p class="booking-heading">Book Your Stay on MAKERsBnB</p>
+  <div class="divider"></div>
+</div>
 
 <div class="contain-all-spaces">
     {{#if spaces}}
     {{#each spaces}}
     <div class="spaces-container">
-        <img src="./images/house.jpeg" alt="house image">
-        <h3>{{this.name}}</h3>
+        <img class="spaces-img" src="./images/333.jpg" alt="house image">
+        <h3 class="spaces-heading">{{this.name}}</h3>
         <p>{{this.description}}</p>
         <p>£{{this.cost}}</p>
         <a href="spaces/{{this.id}}" class="card-button"> view more</a>

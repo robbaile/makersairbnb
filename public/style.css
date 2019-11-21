@@ -75,7 +75,14 @@ label {
     margin: 10px; 
     text-align: center;
     padding: 15px;
-   
+}
+
+.spaces-heading {
+    margin: 12px;
+}
+
+.spaces-img {
+    height: 225px;
 }
 
 .heading {
@@ -203,10 +210,14 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     font-size: medium;
 }
 .booking-header {
- font-size: 16px;
- letter-spacing: 2px;
+ letter-spacing: 4px;
  padding: 5px;
  margin: 10px;
+ text-align: center;
+}
+
+.booking-heading {
+    font-size: 16px;
 }
 
 
@@ -310,3 +321,4 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   .total-price {
       margin-top: 10px;
   }
+  
