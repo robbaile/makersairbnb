@@ -165,8 +165,6 @@ app.get("/my-bookings", (req, res) => {
     res.redirect("/");
   } else {
     db.many("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
-      // .then((data) => res.send(data))
-      // .catch(err => res.send(err));
       .then((data) => res.render("my-bookings", {bookings: data}))
       .catch((err) => res.render("error"));
   }
