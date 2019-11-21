@@ -51,7 +51,7 @@ label {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px; 
     padding: 5px 15px; 
-    border-radius: 20px; 
+    border-radius: 5px; 
     color: #DDDDDD; 
     border: none;
     text-decoration: none; 
@@ -67,11 +67,12 @@ label {
 .contain-all-spaces { 
     display: flex; 
     justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 30px auto;
 }
 
 .spaces-container { 
-    width: 30%;
+    width: 400px;
     background-color: white; 
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     margin: 10px; 
@@ -328,7 +329,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
       background-color: #7EA172;
       text-align: center;
       height: 50px;
-      position: absolute;
+      position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
@@ -356,7 +357,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     font-family: 'Montserrat', sans-serif;
     font-size: 16px; 
     padding: 5px 15px; 
-    border-radius: 20px; 
+    border-radius: 5px; 
     color: #DDDDDD; 
     border: none;
     text-decoration: none; 
@@ -393,4 +394,23 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 5px 15px;
     max-width: 200px;
     background: #A69CAC; 
+ }
+
+ .spaces-background-image {
+    background-image: url("../images/aaa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    padding: 5px 15px;
+ }
+ .listbtn {
+    background-color: #8F8389;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; 
+    padding: 5px 15px; 
+    border-radius: 5px; 
+    color: #DDDDDD;
+    border: none;
+    text-decoration: none; 
+}
  }

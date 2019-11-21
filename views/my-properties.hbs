@@ -18,41 +18,38 @@
   </div>
 </nav>
 
-<div class="contain-all-spaces">
+<div class="spaces-background-image">
+  <div class="contain-all-spaces">
+    <div class="spaces-container"> 
+      <h3> Create a Listing</h3>
+      <br> </br>
+    <form method="POST" action="/my-properties/add">
+        Property's name:<br>
+        <input type="text" name="name" placeholder="your name">
+        <br><br>
+        Describe your property:<br>
+        <input type="text" name="description" placeholder="description">
+        <br><br>
+        Price per night: <br>
+        <input type="text" name="cost" placeholder="£">
+        <br><br>
+        <input class= "listbtn" type="submit" value="List your Space">
+    </form>
+  </div>
 
-<div class="spaces-container"> 
-    <h3> Create a Listing</h3>
-    <br> </br>
-
-<form method="POST" action="/my-properties/add">
-    Property's name:<br>
-    <input type="text" name="name" placeholder="your name">
-    <br><br>
-    Describe your property:<br>
-    <input type="text" name="description" placeholder="description">
-    <br><br>
-    Price per night: <br>
-    <input type="text" name="cost" placeholder="£">
-    <br><br>
-    <input type="submit" value="List your Space">
-</form>
-</div>
-
-    {{#if spaces}}
-    {{#each spaces}}
-    <div class="spaces-container">
-        <img src="./images/house.jpeg" alt="house image">
-        <h3>{{this.name}}</h3>
-        <p>{{this.description}}</p>
-        <p>£{{this.cost}}</p>
-        <a href="spaces/{{this.id}}" class="card-button"> view live page</a>
-    </div>
-    {{/each}}
-    {{/if}}
-</div>
-
-
-
+      {{#if spaces}}
+      {{#each spaces}}
+      <div class="spaces-container">
+          <img class="spaces-img" src="./images/333.jpg" alt="house image">
+          <h3>{{this.name}}</h3>
+          <p>{{this.description}}</p>
+          <p>£{{this.cost}}</p>
+          <a href="spaces/{{this.id}}" class="card-button"> view live page</a>
+      </div>
+      {{/each}}
+      {{/if}}
+  </div>
+  </div>
 </div>
 <footer class="footer"> 2019 makers
 </footer>
