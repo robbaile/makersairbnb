@@ -1,5 +1,5 @@
 body {
-    background-color: #F6EFEE;
+    background-color: #A7C4A0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -10,7 +10,7 @@ h1, h2, h3 {
 }
 
 .card-container { 
-    background-color: #FBFBFF; 
+    background-color: #A7C4A0; 
   max-width: 600px;
   max-height: 270px; 
   position: absolute; 
@@ -26,6 +26,7 @@ h1, h2, h3 {
     border: none;
     border-bottom: 2px #545454 solid; 
     width: 100px; 
+    background-color: #A7C4A0; 
 }
 
 .card-button { 
