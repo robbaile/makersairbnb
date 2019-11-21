@@ -8,8 +8,10 @@
     {{#each bookings}}
     <div class="spaces-container">
         <img src="./images/house.jpeg" alt="house image">
-        <h3>{{this.startdate}}</h3>
-        <p>{{this.enddate}}</p>
+        <p class ="checkinfo"> Check-in:</p>
+        <h3 class ="details-text">{{this.startdate}}</h3>
+        <p class ="checkinfo"> Check-out:</p>
+        <p class ="details-text">{{this.enddate}}</p>
         <p>£{{this.cost}}</p>
         <a href="spaces/{{this.id}}" class="card-button"> view more</a>
     </div>

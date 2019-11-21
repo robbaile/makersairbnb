@@ -90,6 +90,7 @@ app.post("/login", (req, res, next) => {
       .then(user => {
         if (user) {
           req.session.username = req.body.username;
+          req.session.userId = user.id;
           res.redirect("/welcome");
           next();
         }
@@ -127,18 +128,44 @@ app.get("/test", (req, res) => {
   res.render("test");
 });
 
-app.get("/details", (req, res) => {
-  res.render("details");
-});
-
 app.get("/logout", function(req, res) {
   req.session.username = null;
+  req.session.userId = null;
   res.clearCookie("userId");
   res.redirect("/");
 });
 
-app.get("/bookings", (req, res) => {
-  res.render("bookings");
+app.post("/spaces/:id/book", (req, res) => {
+  db.none(
+    "INSERT INTO bookings (startdate, enddate, userId, spacesId) VALUES ($1, $2, $3, $4);",
+    [req.body.checkIn, req.body.checkOut, req.session.userId, req.params.id]
+  ).then(() => {
+    res.redirect("/successful")
+  }).catch(() => res.send("Could not book"))
+})
+
+app.get("/successful", (req, res) => {
+  res.render("successful");
+});
+
+app.get("/my-properties", (req, res) => {
+  if (!req.session.username) {
+    res.redirect("/");
+  } else {
+    db.manyOrNone("SELECT * FROM spaces WHERE userId=$1", [req.session.userId])
+      .then((data) => res.render("my-properties", {spaces: data}))
+      .catch((err) => res.send("error"));
+  }
+});
+
+app.get("/my-bookings", (req, res) => {
+  if (!req.session.username) {
+    res.redirect("/");
+  } else {
+    db.manyOrNone("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
+      .then((data) => res.render("my-bookings", {bookings: data}))
+      .catch((err) => res.render("error"));
+  }
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
