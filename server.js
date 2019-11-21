@@ -133,10 +133,6 @@ app.get("/details", (req, res) => {
 });
 
 
-app.get("/bookings", (req, res) => {
-  res.render("bookings");
-});
-
 app.get("/logout", function(req, res) {
   req.session.username = null;
   req.session.userId = null;
@@ -174,10 +170,10 @@ app.get("/my-bookings", (req, res) => {
     res.redirect("/");
   } else {
     db.many("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
-      .then((data) => res.send(data))
-      .catch(err => res.send(err));
-      // .then((data) => res.render("myBookings", {data: data}))
-      // .catch((err) => res.render("error"));
+      // .then((data) => res.send(data))
+      // .catch(err => res.send(err));
+      .then((data) => res.render("my-bookings", {bookings: data}))
+      .catch((err) => res.render("error"));
   }
 });
 
