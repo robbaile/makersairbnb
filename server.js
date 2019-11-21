@@ -168,5 +168,20 @@ app.get("/my-bookings", (req, res) => {
   }
 });
 
+app.get("/my-properties/add", (req,res) => {
+  if (!req.session.username) {
+    res.redirect("/");
+  } else {
+    res.render("list_space");
+  }
+});
+
+app.post("/my-properties/add", (req, res) => {
+  db.none("INSERT INTO spaces (name, description, cost, userId) VALUES ($1, $2, $3, $4)", 
+    [req.body.name, req.body.description, req.body.cost, req.session.userId])
+    .then(() => res.redirect("/my-properties"))
+    .catch(() => res.send("could not add property"));
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
