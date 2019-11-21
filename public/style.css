@@ -381,8 +381,19 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         height: 260px;
   }
 
+<<<<<<< HEAD
 .bookings-heading {
     padding-top: 15px;
     font-size: 22px;
 }
 
+=======
+  .button-add {
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    max-width: 200px;
+    background: #A69CAC; 
+ }
+>>>>>>> 87ab3134924534431adfb917d30a69b1423d9ae5
