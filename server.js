@@ -132,6 +132,11 @@ app.get("/details", (req, res) => {
   res.render("details");
 });
 
+
+app.get("/bookings", (req, res) => {
+  res.render("bookings");
+});
+
 app.get("/logout", function(req, res) {
   req.session.username = null;
   req.session.userId = null;
