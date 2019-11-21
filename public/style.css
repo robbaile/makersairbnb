@@ -371,3 +371,12 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     color: #545454;
     text-decoration: none;
 }
+  .signupbox {
+        background-color: #DDDDDD;
+        display: inline-block;
+        padding: 10px 60px;
+        height: 260px;
+
+
+  }
+
