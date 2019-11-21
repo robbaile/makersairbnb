@@ -128,11 +128,6 @@ app.get("/test", (req, res) => {
   res.render("test");
 });
 
-app.get("/details", (req, res) => {
-  res.render("details");
-});
-
-
 app.get("/logout", function(req, res) {
   req.session.username = null;
   req.session.userId = null;
