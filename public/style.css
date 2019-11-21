@@ -88,7 +88,7 @@ label {
 
 .detailscontainer { 
 background-color: #FBFBFF; 
-height: 1000px;
+height: 800px;
 max-width: 1000px;
 max-height: 1000px; 
 position: absolute; 
@@ -125,12 +125,12 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 .avalibility-container { 
     margin: 30px;
-    background-color: #E3DFFF;
     padding: 10px; 
     border: 30px C;
     height: 400px;
     max-width: 400px;
-    max-height: 500px
+    max-height: 100px;
+    display: flex;
 
 }
 
@@ -141,7 +141,13 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 .img {
     max-width: 100%;
-    height: auto;
+    height: 600px;
+margin-left: 110px;
+  margin-top: 30px;
+  text-align: left;
+  display: block !important;
+
+
 }
 
 .img2 {
@@ -215,3 +221,90 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
  margin: 10px;
 }
 
+
+.container-fluid {
+    color: #54494B;
+  }
+  .btn {
+    background-color: #F1F7ED;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .opinions-image {
+    max-width: 380px;
+    height: 150px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start;
+  
+  }
+  .opinions-heading {
+    font-size: 20px;
+    color: #54494B;
+    margin: 10px;
+    border-bottom: 2px solid #8F8389 ;
+  
+  }
+  .opinions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .opinions-image-container {
+  width: 20%;
+  margin: 2%;
+  }
+  .comment {
+    color: #8F8389;
+    margin: 10px;
+  }
+  
+  .divider {
+     border: 1px solid #ccc;
+     width: 60%;
+     margin: 0 auto;
+  }
+  .dates-container {
+     display: flex;
+  }
+  .date-input {
+     height: 40px;
+     font-size: 16px;
+     border: 1px solid #ddd;
+  }
+  .button-submit {
+     height: 40px;
+     font-size: 16px;
+     border: 1px solid #ddd;
+     padding: 5px 15px;
+  }
+  .availability-heading {
+     margin-right: 3px;
+  }
+  label {
+     display: block;
+     text-align: left;
+  }
+  .flex {
+     display: flex;
+     align-items: center;
+  }
+  .hide {
+     display: none;
+  }
+  .property-image-container {
+    width: 45%;
+  }
+  
+  .img-res {
+    margin-left: 110px;
+    margin-top: 30px;
+    width: 380px;
+    max-height: 500px;
+    text-align: left;
+    display: block !important;
+  }
+  
+  .content-container {
+    margin-left: 50px;
+  }
+  

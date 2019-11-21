@@ -1,65 +1,69 @@
-
-<div class = "detailscontainer">
-  <h1>Sarah's Castle</h1>
-<img class = "img" src="../images/1.jpg" alt="house image">
-  <div class="details-flex-container">
-    <div class = "contain-all-details">
-      <p>{{data.space.name}}</p>
-      <p>Details </p>
-      <p class = "details-text">
-        {{data.space.description}}
-      </p>
-      <h3>Amenties</h3>
-      <p class="amenities">
-        £{{data.space.cost}}
-      </p>  
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">MAKERsBnB</a>
     </div>
- 
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/my-properties">MY PROPERTIES</a></li>
+        <li><a href="/my-bookings">MY BOOKINGS</a></li>
+        <li><a href="/logout">LOGOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid flex justify-content-space-between bg-1 text-right">
+  <div class="property-image-container">
+    <img src="../images/2.jpg" class="img-responsive" style="display:inline" alt="chair" width="500" height="500">
+  </div>
+  <div class="content-">
+    <h3> Minimalistic Flat in the Forest </h3>
     <div class="avalibility-container">
-      <div class="flex">
-        <h3 class="availability-heading"><strong>£{{data.space.cost}} </strong></h3>
-        <p> per night</p>
-      </div>
-      <form method="POST" action="/spaces/{{data.space.id}}/book">
-        <div class="dates-container">
-          <div>
-            <label>Check in</label>
-            <input class="date-input" id ="check-in" type="date" name="checkIn">
-          </div>
-          <div>
-            <label>Check out</label>
-            <input class="date-input" id="check-out" type="date" name="checkOut">
-          </div>
-        </div>
-        <p id="pricing-container"></p>
-        <input id="button-dates" class="hide button-submit" type="submit" value="Book">
-      </form>        
-    </div> 
+         <div class="flex">
+           <h3 class="availability-heading"><strong>£{{data.space.cost}} </strong></h3>
+           <p> per night</p>
+         </div>
+         <form action="/details">
+           <div class="dates-container">
+             <div>
+               <label>Check in</label>
+               <input class="date-input" id ="check-in" type="date" name="check-in">
+             </div>
+             <div>
+               <label>Check out</label>
+               <input class="date-input" id="check-out" type="date" name="check-out">
+             </div>
+           </div>
+           <p id="pricing-container"></p>
+           <input id="button-dates" class="hide button-submit" type="submit" value="Book">
+         </form>
+       </div>
   </div>
 </div>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+<div id="Opinions" class ="opinions">
+       <div class="opinions-image-container">
+         <img class ="opinions-image" src="../images/icon.jpg"  alt="pic icon"></img>
+       </div>
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
+      <div class="opinions-text-container">
+          <h2 class="opinions-heading"> What people say... </h2>
+          <p class="comment" > Rosie: "beautiful apartament, very friendly host" </p>
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-</style>
+       </div>
+</div>
+
+<footer class="container-fluid bg-4 text-center">
+  <p> 2019 makers </p>
+</footer>
+
+
 
 <script> 
     const checkIn = document.querySelector('#check-in');
