@@ -152,5 +152,30 @@ app.get("/successful", (req, res) => {
   res.render("successful");
 });
 
+app.get("/my-properties", (req, res) => {
+  if (!req.session.username) {
+    res.redirect("/");
+  } else {
+    db.many("SELECT * FROM spaces WHERE userId=$1", [req.session.userId])
+      .then((data) => res.send(data))
+      .catch(err => res.send(err));
+      // .then((data) => res.render("myProperties", {data: data}))
+      // .catch((err) => res.render("error"));
+  }
+});
+
+app.get("/my-bookings", (req, res) => {
+  if (!req.session.username) {
+    res.redirect("/");
+  } else {
+    db.many("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
+      .then((data) => res.send(data))
+      .catch(err => res.send(err));
+      // .then((data) => res.render("myBookings", {data: data}))
+      // .catch((err) => res.render("error"));
+  }
+});
+
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
