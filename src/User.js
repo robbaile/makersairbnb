@@ -1,10 +1,9 @@
 "use strict";
 
 class User {
-  constructor(username, password, email){
+  constructor(username, email) {
     this._email = email;
     this._username = username;
-    this._password = password;
     this._properties = [];
     this._bookings = [];
   }
@@ -24,7 +23,7 @@ class User {
   bookSpace(bookedSpace) {
     this._bookings.push(bookedSpace);
   }
-  
+
   createSpace(createdSpace) {
     this._properties.push(createdSpace);
   }

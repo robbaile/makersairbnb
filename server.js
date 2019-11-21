@@ -1,5 +1,7 @@
 const express = require("express");
 const User = require("./src/User");
+const Space = require("./src/Space");
+
 const app = express();
 const bodyParser = require("body-parser");
 
@@ -87,9 +89,13 @@ app.post("/login", (req, res, next) => {
       "SELECT * from users WHERE username=$1 AND password=crypt($2, password);;",
       [req.body.username, req.body.password]
     )
-      .then(user => {
+      .then(async user => {
         if (user) {
           req.session.username = req.body.username;
+          req.session.email = await db.query(
+            "SELECT email FROM users where username=$1",
+            [req.session.username]
+          );
           res.redirect("/welcome");
           next();
         }
@@ -98,12 +104,12 @@ app.post("/login", (req, res, next) => {
   }
 });
 
-app.get("/welcome", (req, res, next) => {
+app.get("/welcome", async (req, res, next) => {
   if (!req.session.username) {
     res.redirect("/");
     next();
   } else {
-    var spaces = db.many("SELECT * from spaces");
+    var spaces = await db.query("SELECT * from spaces");
     res.render("welcome", { spaces: spaces });
   }
 });
@@ -144,8 +150,11 @@ app.get("/details", (req, res) => {
 
 app.get("/logout", function(req, res) {
   req.session.username = null;
-  res.clearCookie("userId");
   res.redirect("/");
 });
 
+app.get("/book", function(req, res) {
+  user = new User(req.session.username, req.session.email);
+  space = new Space();
+});
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
