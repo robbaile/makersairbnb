@@ -152,11 +152,9 @@ app.get("/my-properties", (req, res) => {
   if (!req.session.username) {
     res.redirect("/");
   } else {
-    db.many("SELECT * FROM spaces WHERE userId=$1", [req.session.userId])
-      .then((data) => res.send(data))
-      .catch(err => res.send(err));
-      // .then((data) => res.render("myProperties", {data: data}))
-      // .catch((err) => res.render("error"));
+    db.manyOrNone("SELECT * FROM spaces WHERE userId=$1", [req.session.userId])
+      .then((data) => res.render("my-properties", {spaces: data}))
+      .catch((err) => res.send("error"));
   }
 });
 
@@ -164,7 +162,7 @@ app.get("/my-bookings", (req, res) => {
   if (!req.session.username) {
     res.redirect("/");
   } else {
-    db.many("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
+    db.manyOrNone("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
       .then((data) => res.render("my-bookings", {bookings: data}))
       .catch((err) => res.render("error"));
   }

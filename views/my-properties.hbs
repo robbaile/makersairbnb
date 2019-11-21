@@ -1,17 +1,15 @@
 <div class="header"> 
-    <h1 class="heading" >Your bookings</h1>
+    <h1 class="heading" >Your Listed Properties</h1>
     <p class="additional-text">  </p>
 </div>
 
 <div class="contain-all-spaces">
-    {{#if bookings}}
-    {{#each bookings}}
+    {{#if spaces}}
+    {{#each spaces}}
     <div class="spaces-container">
         <img src="./images/house.jpeg" alt="house image">
-        <p class ="checkinfo"> Check-in:</p>
-        <h3 class ="details-text">{{this.startdate}}</h3>
-        <p class ="checkinfo"> Check-out:</p>
-        <p class ="details-text">{{this.enddate}}</p>
+        <h3>{{this.name}}</h3>
+        <p>{{this.description}}</p>
         <p>£{{this.cost}}</p>
         <a href="spaces/{{this.id}}" class="card-button"> view more</a>
     </div>
