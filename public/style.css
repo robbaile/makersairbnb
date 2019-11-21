@@ -59,7 +59,9 @@ label {
 
 .header { 
     background-color: #A69CAC;
-    
+    font-size: 9px;
+    letter-spacing: 10px;
+    text-align: center;
 }
 
 .contain-all-spaces { 
@@ -86,6 +88,7 @@ label {
 }
 
 .heading {
+
    padding: 15px; 
 }
 
@@ -376,9 +379,12 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         display: inline-block;
         padding: 10px 60px;
         height: 260px;
-
-
   }
+
+.bookings-heading {
+    padding-top: 15px;
+    font-size: 22px;
+}
 
   .button-add {
     height: 40px;
