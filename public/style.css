@@ -1,5 +1,5 @@
 body {
-    background-color: #F6EFEE;
+    background-color: #DDDDDD;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -24,9 +24,10 @@ label {
 }
 
 .card-container { 
-    background-color: #FBFBFF; 
-  max-width: 600px;
-  max-height: 270px; 
+    background-image: url("./images/123.jpg");
+    background-color: #cccccc;
+  max-width: 2000px;
+  max-height: 400px; 
   position: absolute; 
   top: 0; 
   bottom: 0;
@@ -40,28 +41,23 @@ label {
     border: none;
     border-bottom: 2px #545454 solid; 
     width: 100px; 
+    background-color: transparent; 
 }
 
 .card-button { 
     background-color: #7EA172;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px; 
+    font-size: 16px; 
     padding: 5px 15px; 
     border-radius: 20px; 
-    color: white; 
+    color: #DDDDDD; 
     border: none;
     text-decoration: none; 
 }
 
 .header { 
     background-color: #A69CAC;
-    color: white; 
-    height: 100px; 
-    width: 100%; 
-    border-radius: 20px;
-    max-width: 600px;
-    border: 10px;
-    top: 50px;
+    
 }
 
 .contain-all-spaces { 
@@ -152,6 +148,35 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     position: left;
 }
 
+}
+.navbar-brand {
+    padding-top: px;
+    padding-bottom: 40px;
+    border: 100;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 26px;
+    letter-spacing: 15px;
+  }
+
+.username-container {
+    background-color: #DDDDDD;
+    display: inline-block;
+    padding: 10px 60px;
+}
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #54494B !important;
+  }
 .divider {
     border: 1px solid #ccc;
     width: 60%;
