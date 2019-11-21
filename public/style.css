@@ -419,3 +419,10 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
      height: 30px;
 
  }
+ .bookings-background-image {
+    background-image: url("../images/9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    padding: 5px 15px;
+ }
