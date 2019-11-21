@@ -124,14 +124,12 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .avalibility-container { 
-    margin: 30px;
+    margin: 200px 0 0 120px;
     padding: 10px; 
     border: 30px C;
     height: 400px;
     max-width: 400px;
     max-height: 100px;
-    display: flex;
-
 }
 
 .details-flex-container {
@@ -277,7 +275,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   .flex {
      display: flex;
-     align-items: center;
+     align-items: flex-start;
   }
   .hide {
      display: none;
@@ -298,5 +296,17 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   .content-container {
     margin-left: 50px;
   }
+
+  .price-box {
+      margin-bottom: 15px;
+      text-align: left;
+  }
   
-  
+  .price-container {
+      text-align: center;
+      margin-top: 30px;
+  }
+
+  .total-price {
+      margin-top: 10px;
+  }

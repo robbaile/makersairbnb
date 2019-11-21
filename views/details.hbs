@@ -23,9 +23,11 @@
     <img src="../images/2.jpg" class="img-responsive" style="display:inline" alt="chair" width="500" height="500">
   </div>
   <div class="content-">
-    <h3> Minimalistic Flat in the Forest </h3>
     <div class="avalibility-container">
-         <div class="flex">
+
+      <h3 class="price-box">{{data.space.name}}</h3>
+
+         <div class="flex price-box">
            <h3 class="availability-heading"><strong>£{{data.space.cost}} </strong></h3>
            <p> per night</p>
          </div>
@@ -87,7 +89,7 @@
       <div class="price-container">
         <p>£${price} X ${diffDays} nights</p>
         <div class="divider"></div>
-        <p><strong>Total price:</strong> £${diffDays * price}</p>
+        <p class="total-price"><strong>Total price:</strong> £${diffDays * price}</p>
       </div>
     `
     document.querySelector("#button-dates").classList.remove("hide");
