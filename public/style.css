@@ -43,13 +43,7 @@ h1, h2, h3 {
 
 .header { 
     background-color: #A69CAC;
-    color: white; 
-    height: 100px; 
-    width: 100%; 
-    border-radius: 20px;
-    max-width: 600px;
-    border: 10px;
-    top: 50px;
+    
 }
 
 .contain-all-spaces { 
@@ -155,3 +149,16 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     display: inline-block;
     padding: 10px 60px;
 }
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #54494B !important;
+  }
