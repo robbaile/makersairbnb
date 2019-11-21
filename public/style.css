@@ -42,6 +42,8 @@ label {
     border-bottom: 2px #545454 solid; 
     width: 100px; 
     background-color: transparent; 
+    font-size: 12px;
+    text-align: center;
 }
 
 .card-button { 
@@ -73,6 +75,7 @@ label {
     margin: 10px; 
     text-align: center;
     padding: 15px;
+   
 }
 
 .heading {
@@ -205,3 +208,10 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 .checkinfo { 
     font-size: medium;
 }
+.booking-header {
+ font-size: 16px;
+ letter-spacing: 2px;
+ padding: 5px;
+ margin: 10px;
+}
+
