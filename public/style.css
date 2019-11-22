@@ -431,3 +431,39 @@ color: #8F8389;
     height: 900px;
     padding: 5px 15px;
  }
+
+ .bed {
+    max-width: 380px;
+    height: 40px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start;
+ }
+ .coffee-maker {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start; 
+ }
+ .hanger {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start; 
+ }
+ .shower {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start;   
+ }
+ .wifi-router {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start; 
+ }
