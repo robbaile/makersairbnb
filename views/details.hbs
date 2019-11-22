@@ -1,25 +1,41 @@
 <div class = "detailscontainer">
-    <h1>Sarah's Castle</h1>
+  <h1>Sarah's Castle</h1>
 <img class = "img" src="../images/1.jpg" alt="house image">
-    <div class="details-flex-container">
-        <div class = "contain-all-details">
-            <p>{{data.space.name}}</p>
-            <p>Details </p>
-            <p class = "details-text">
-              {{data.space.description}}
-            </p>
-            <h3>Amenties</h3>
-            <p class="amenities">
-              £{{data.space.cost}}
-            </p>  
-        </div>
-
-            <div class="avalibility-container" >
-                <p> This is the Availability!</p>
-                <p> <img src="../images/calendar.png" alt="calendar image"></p>
-            </div> 
+  <div class="details-flex-container">
+    <div class = "contain-all-details">
+      <p>{{data.space.name}}</p>
+      <p>Details </p>
+      <p class = "details-text">
+        {{data.space.description}}
+      </p>
+      <h3>Amenties</h3>
+      <p class="amenities">
+        £{{data.space.cost}}
+      </p>  
     </div>
-    
+ 
+    <div class="avalibility-container">
+      <div class="flex">
+        <h3 class="availability-heading"><strong>£{{data.space.cost}} </strong></h3>
+        <p> per night</p>
+      </div>
+      <form method="POST" action="/spaces/{{data.space.id}}/book">
+        <div class="dates-container">
+          <div>
+            <label>Check in</label>
+            <input class="date-input" id ="check-in" type="date" name="checkIn">
+          </div>
+          <div>
+            <label>Check out</label>
+            <input class="date-input" id="check-out" type="date" name="checkOut">
+          </div>
+        </div>
+        <p id="pricing-container"></p>
+        <input id="button-dates" class="hide button-submit" type="submit" value="Book">
+      </form>        
+    </div> 
+  </div>
+</div>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -44,5 +60,32 @@
 }
 </style>
 
-</div>
+<script> 
+    const checkIn = document.querySelector('#check-in');
+    const checkOut = document.querySelector('#check-out');
+    const pricingContainer = document.querySelector('#pricing-container');
+    const price = {{{data.space.cost}}}
 
+    checkIn.addEventListener('change', update);
+    checkOut.addEventListener('change', update);
+
+
+    function update(a) {
+  if (checkIn.value && checkOut.value !== "") { 
+    console.log(`start date: ${checkIn.value}, end date: ${checkOut.value}`);
+
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const firstDate = new Date (checkIn.value)
+    const secondDate = new Date(checkOut.value);
+    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    pricingContainer.innerHTML = `
+      <div class="price-container">
+        <p>£${price} X ${diffDays} nights</p>
+        <div class="divider"></div>
+        <p><strong>Total price:</strong> £${diffDays * price}</p>
+      </div>
+    `
+    document.querySelector("#button-dates").classList.remove("hide");
+  } 
+}
+</script>
