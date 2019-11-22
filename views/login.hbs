@@ -1,18 +1,20 @@
-<div class="card-container">
-    <div>
-        <p class="navbar-heading"> MAKERsBnB</p>
+<body>
+    <div class="card-container">
+        <div>
+            <p class="navbar-heading"> MAKERsBnB</p>
+        </div>
+        <br></br>
+        <div class="username-container">
+            <form method="POST" action="/login">
+                Username:<br>
+                <input class="card-input" type="text" name="username">
+                <br><br>
+                Password:<br>
+                <input class="card-input" type="password" name="password">
+                <br><br>
+                <input class="card-button" type="submit" value="Submit">
+            </form>
+        </div>
+
     </div>
-    <br></br>
-    <div class="username-container">
-        <form method="POST" action="/login">
-            Username:<br>
-            <input class="card-input" type="text" name="username">
-            <br><br>
-            Password:<br>
-            <input class="card-input" type="password" name="password">
-            <br><br>
-            <input class="card-button" type="submit" value="Submit">
-        </form>
-    </div>
-    
-</div>
+</body>

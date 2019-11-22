@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest",
+    "test-init": "./node_modules/jasmine/bin/jasmine.js init",
+    "test": "./node_modules/jasmine/bin/jasmine.js",
     "start": "node server.js",
     "watch": "nodemon ./server.js"
   },
@@ -29,6 +30,9 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "i": "^0.3.6",
+    "jasmine": "^3.5.0",
+    "jasmine-node": "^3.0.0",
+    "jest-puppeteer": "^4.3.0",
     "morgan": "^1.9.1",
     "nodeman": "^1.1.2",
     "nodemon": "^1.19.4",

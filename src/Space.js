@@ -14,7 +14,7 @@ class Space {
   }
 
   setApproval() {
-    if(this._approved == false){
+    if (this._approved == false) {
       this._approved = true;
     } else {
       this._approved = false;
