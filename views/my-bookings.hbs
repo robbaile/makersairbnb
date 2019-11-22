@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<div class="header">
-    <h1 class="heading">Book your stay on MakersBnb</h1>
-    <p class="additional-text"> boom... </p>
-</div>
-=======
-<!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
@@ -26,25 +19,25 @@
     </div>
   </div>
 </nav>
->>>>>>> f836f49e1a14d7cbc3f48e56cc4275d27764f91d
 
-<div class="booking-header">
-  <p class="booking-heading">Book Your Stay on MAKERsBnB</p>
-  <div class="divider"></div>
+<div class="header"> 
+    <h1 class="bookings-heading" >Your bookings</h1>
+    <p class="additional-text">  </p>
 </div>
-
+<div class="bookings-background-image">
 <div class="contain-all-spaces">
-    {{#if spaces}}
-    {{#each spaces}}
+    {{#if bookings}}
+    {{#each bookings}}
     <div class="spaces-container">
-        <img class="spaces-img" src="./images/333.jpg" alt="house image">
-        <h3 class="spaces-heading">{{this.name}}</h3>
-        <p>{{this.description}}</p>
+        <img class= "spaces-img"src="./images/33.jpg" alt="house image">
+        <p class ="checkinfo"> Check-in:</p>
+        <h3 class ="details-text">{{this.startdate}}</h3>
+        <p class ="checkinfo"> Check-out:</p>
+        <p class ="details-text">{{this.enddate}}</p>
         <p>£{{this.cost}}</p>
         <a href="spaces/{{this.id}}" class="card-button"> view more</a>
     </div>
     {{/each}}
     {{/if}}
 </div>
-<footer class="footer"> 2019 makers
-</footer>
+</div>

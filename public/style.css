@@ -1,5 +1,5 @@
 body {
-    background-color: #F6EFEE;
+    background-color: #DDDDDD;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -24,9 +24,10 @@ label {
 }
 
 .card-container { 
-    background-color: #FBFBFF; 
-  max-width: 600px;
-  max-height: 270px; 
+    background-image: url("./images/123.jpg");
+    background-color: #cccccc;
+  max-width: 2000px;
+  max-height: 400px; 
   position: absolute; 
   top: 0; 
   bottom: 0;
@@ -40,38 +41,38 @@ label {
     border: none;
     border-bottom: 2px #545454 solid; 
     width: 100px; 
+    background-color: transparent; 
+    font-size: 12px;
+    text-align: center;
 }
 
 .card-button { 
     background-color: #7EA172;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px; 
+    font-size: 16px; 
     padding: 5px 15px; 
-    border-radius: 20px; 
-    color: white; 
+    border-radius: 5px; 
+    color: #DDDDDD; 
     border: none;
     text-decoration: none; 
 }
 
 .header { 
     background-color: #A69CAC;
-    color: white; 
-    height: 100px; 
-    width: 100%; 
-    border-radius: 20px;
-    max-width: 600px;
-    border: 10px;
-    top: 50px;
+    font-size: 9px;
+    letter-spacing: 10px;
+    text-align: center;
 }
 
 .contain-all-spaces { 
     display: flex; 
     justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 30px auto;
 }
 
 .spaces-container { 
-    width: 30%;
+    width: 400px;
     background-color: white; 
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     margin: 10px; 
@@ -79,7 +80,16 @@ label {
     padding: 15px;
 }
 
+.spaces-heading {
+    margin: 12px;
+}
+
+.spaces-img {
+    height: 225px;
+}
+
 .heading {
+
    padding: 15px; 
 }
 
@@ -89,7 +99,7 @@ label {
 
 .detailscontainer { 
 background-color: #FBFBFF; 
-height: 1000px;
+height: 800px;
 max-width: 1000px;
 max-height: 1000px; 
 position: absolute; 
@@ -125,14 +135,12 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .avalibility-container { 
-    margin: 30px;
-    background-color: #E3DFFF;
+    margin: 200px 0 0 120px;
     padding: 10px; 
     border: 30px C;
     height: 400px;
     max-width: 400px;
-    max-height: 500px
-
+    max-height: 100px;
 }
 
 .details-flex-container {
@@ -140,18 +148,42 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     justify-content: space-around;
 }
 
-.img {
-    max-width: 100%;
-    height: auto;
-}
-
 .img2 {
     max-width: 40%;
     height: 390px;
     background-position: auto;
     position: left;
+    padding: 10px;
 }
 
+.navbar-heading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 100;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 26px;
+    letter-spacing: 15px;
+  }
+
+.username-container {
+    background-color: #DDDDDD;
+    display: inline-block;
+    padding: 10px 60px;
+}
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #54494B !important;
+  }
 .divider {
     border: 1px solid #ccc;
     width: 60%;
@@ -178,3 +210,219 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 .availability-heading {
     margin-right: 3px;
 }
+.checkinfo { 
+    font-size: medium;
+}
+.booking-header {
+ letter-spacing: 4px;
+ padding: 5px;
+ margin: 10px;
+ text-align: center;
+}
+
+.booking-heading {
+    font-size: 16px;
+}
+
+
+.container-fluid {
+    color: #54494B;
+  }
+  .btn {
+    background-color: #F1F7ED;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .opinions-image {
+    max-width: 380px;
+    height: 150px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start;
+  
+  }
+  .opinions-heading {
+    font-size: 20px;
+    color: #54494B;
+    margin: 10px;
+    border-bottom: 2px solid #8F8389 ;
+  
+  }
+  .opinions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEEEE;
+  }
+  .opinions-image-container {
+  width: 20%;
+  margin: 2%;
+  }
+  .comment {
+    color: #8F8389;
+    margin: 10px;
+  }
+  
+  .divider {
+     border: 1px solid #ccc;
+     width: 60%;
+     margin: 0 auto;
+  }
+  .dates-container {
+     display: flex;
+  }
+  .date-input {
+     height: 40px;
+     font-size: 16px;
+     border: 1px solid #ddd;
+  }
+  .button-submit {
+     height: 40px;
+     font-size: 16px;
+     border: 1px solid #ddd;
+     padding: 5px 15px;
+  }
+  .availability-heading {
+     margin-right: 3px;
+  }
+  label {
+     display: block;
+     text-align: left;
+  }
+  .flex {
+     display: flex;
+     align-items: flex-start;
+  }
+  .hide {
+     display: none;
+  }
+  .property-image-container {
+    width: 45%;
+  }
+  
+  .img-res {
+    margin-left: 110px;
+    margin-top: 30px;
+    width: 380px;
+    max-height: 500px;
+    text-align: left;
+    display: block !important;
+  }
+  
+  .content-container {
+    margin-left: 50px;
+  }
+
+  .price-box {
+      margin-bottom: 15px;
+      text-align: left;
+  }
+  
+  .price-container {
+      text-align: center;
+      margin-top: 30px;
+  }
+
+  .total-price {
+      margin-top: 10px;
+  }
+  .footer {
+      background-color: #7EA172;
+      text-align: center;
+      height: 50px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+  }
+
+  .image-suitcase {
+      height: 200px;
+      width: 100%;
+      margin-top: 50px;
+  }
+  .suitcaseText {
+      text-align: center;
+      font-size: 18px;
+     letter-spacing: 5px;
+  }
+  .suitcaseText1 {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin: 30px;
+}
+.success-button { 
+    background-color: #7EA172;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; 
+    padding: 5px 15px; 
+    border-radius: 5px; 
+    color: #DDDDDD; 
+    border: none;
+    text-decoration: none; 
+    text-align: center;
+    width: 150px;
+    margin: 50px auto;
+}
+
+.success-link {
+    color: #DDDDDD;
+    text-decoration: none;
+}
+
+.success-link:hover {
+    color: #545454;
+    text-decoration: none;
+}
+  .signupbox {
+        background-color: #DDDDDD;
+        display: inline-block;
+        padding: 10px 60px;
+        height: 260px;
+  }
+
+.bookings-heading {
+    padding-top: 15px;
+    font-size: 22px;
+}
+
+  .button-add {
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    max-width: 200px;
+    background: #A69CAC; 
+ }
+
+ .spaces-background-image {
+    background-image: url("../images/aaa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    padding: 5px 15px;
+ }
+ .listbtn {
+    background-color: #8F8389;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; 
+    padding: 5px 15px; 
+    border-radius: 5px; 
+    color: #DDDDDD;
+    border: none;
+    text-decoration: none; 
+}
+
+.icon { 
+    width: 30px;
+    height: 30px;
+}
+
+ .bookings-background-image {
+    background-image: url("../images/9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    padding: 5px 15px;
+ }

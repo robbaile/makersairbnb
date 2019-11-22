@@ -141,10 +141,6 @@ app.get("/test", (req, res) => {
   res.render("test");
 });
 
-app.get("/details", (req, res) => {
-  res.render("details");
-});
-
 app.get("/logout", function(req, res) {
   req.session.username = null;
   req.session.userId = null;
@@ -171,11 +167,17 @@ app.get("/my-properties", (req, res) => {
   if (!req.session.username) {
     res.redirect("/");
   } else {
+<<<<<<< HEAD
     db.many("SELECT * FROM spaces WHERE userId=$1", [req.session.userId])
       .then(data => res.send(data))
       .catch(err => res.send(err));
     // .then((data) => res.render("myProperties", {data: data}))
     // .catch((err) => res.render("error"));
+=======
+    db.manyOrNone("SELECT * FROM spaces WHERE userId=$1", [req.session.userId])
+      .then((data) => res.render("my-properties", {spaces: data}))
+      .catch((err) => res.send("error"));
+>>>>>>> f836f49e1a14d7cbc3f48e56cc4275d27764f91d
   }
 });
 
@@ -183,6 +185,7 @@ app.get("/my-bookings", (req, res) => {
   if (!req.session.username) {
     res.redirect("/");
   } else {
+<<<<<<< HEAD
     db.many("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
       .then(data => res.send(data))
       .catch(err => res.send(err));
@@ -191,4 +194,27 @@ app.get("/my-bookings", (req, res) => {
   }
 });
 
+=======
+    db.manyOrNone("SELECT * FROM bookings WHERE userId=$1", [req.session.userId])
+      .then((data) => res.render("my-bookings", {bookings: data}))
+      .catch((err) => res.render("error"));
+  }
+});
+
+app.get("/my-properties/add", (req,res) => {
+  if (!req.session.username) {
+    res.redirect("/");
+  } else {
+    res.render("list_space");
+  }
+});
+
+app.post("/my-properties/add", (req, res) => {
+  db.none("INSERT INTO spaces (name, description, cost, userId) VALUES ($1, $2, $3, $4)", 
+    [req.body.name, req.body.description, req.body.cost, req.session.userId])
+    .then(() => res.redirect("/my-properties"))
+    .catch(() => res.send("could not add property"));
+})
+
+>>>>>>> f836f49e1a14d7cbc3f48e56cc4275d27764f91d
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
