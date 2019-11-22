@@ -547,4 +547,44 @@ color: #8F8389;
       opacity: 1;
     }
   }
+
+  .text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+
+::-webkit-datetime-edit { padding: 1em; }
+::-webkit-datetime-edit-fields-wrapper { background: #FFFFFF; }
+::-webkit-datetime-edit-text { color: #54494B; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: #54494B; }
+::-webkit-datetime-edit-day-field { color: #54494B;  }
+::-webkit-datetime-edit-year-field { color: #54494B;  }
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { background: #8F8389;  }
   
