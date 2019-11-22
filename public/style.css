@@ -127,11 +127,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     max-height: 500px
 
 }
-.amenities {
-    text-align: left;
-    font-size: small;
-    font-style: oblique
-}
+
 .details-text { 
     text-align: left;
     font-size: small;
@@ -264,6 +260,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   .comment {
     color: #8F8389;
     margin: 10px;
+    font-style: oblique;
   }
   
   .divider {
@@ -478,8 +475,36 @@ color: #8F8389;
     margin: 5px;
     align-content: flex-start; 
  }
+ .amenities-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #545454;
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin: 25px 0;
+ }
+ .amenities-small-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #545454;
+    font-size: 14px;
+    text-align: left;
+    margin: 100px 0;
+ }
+ .amenities {
+     margin: 100px;
+     border: 2px solid #cccccc;
+     padding: 15px 50px;
+ }
 
  .link-container {
      margin-top: 10px;
      height: 30px;
+ }
+ .signup-text {
+    padding-top: 35px;
+    padding-bottom: 20px;
+    border: 100;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    letter-spacing: 6px;
  }
