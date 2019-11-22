@@ -413,12 +413,12 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     border: none;
     text-decoration: none; 
 }
- }
- .icon { 
-     width: 30px;
-     height: 30px;
 
- }
+.icon { 
+    width: 30px;
+    height: 30px;
+}
+
  .bookings-background-image {
     background-image: url("../images/9.jpg");
     background-repeat: no-repeat;
