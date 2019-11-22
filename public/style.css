@@ -56,6 +56,10 @@ label {
     border: none;
     text-decoration: none; 
 }
+.card-button:hover {
+background-color: #cccccc;
+color: black;
+}
 
 .header { 
     background-color: #A69CAC;
@@ -413,19 +417,21 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     border: none;
     text-decoration: none; 
 }
-
+.listbtn:hover {
+background-color: #DDDDDD;
+color: #8F8389;
+}
 .icon { 
     width: 30px;
     height: 30px;
 }
 
  .bookings-background-image {
-    background-image: url("../images/9.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    
     height: 900px;
     padding: 5px 15px;
  }
+
 .signup { 
     color: #8F8389;
     font-size: 16px;  
@@ -435,3 +441,39 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     color: #2F2504;
     font-size: 18px;
 }
+
+ .bed {
+    max-width: 380px;
+    height: 40px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start;
+ }
+ .coffee-maker {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start; 
+ }
+ .hanger {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start; 
+ }
+ .shower {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start;   
+ }
+ .wifi-router {
+    max-width: 380px;
+    height: 30px;
+    border-radius: 12%;
+    margin: 5px;
+    align-content: flex-start; 
+ }
