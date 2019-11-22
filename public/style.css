@@ -432,6 +432,16 @@ color: #8F8389;
     padding: 5px 15px;
  }
 
+.signup { 
+    color: #8F8389;
+    font-size: 16px;  
+
+}
+.signup:hover{
+    color: #2F2504;
+    font-size: 18px;
+}
+
  .bed {
     max-width: 380px;
     height: 40px;
