@@ -428,9 +428,10 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
  }
 .signup { 
     color: #8F8389;
-    font-size: 18px;  
+    font-size: 16px;  
 
 }
 .signup:hover{
     color: #2F2504;
+    font-size: 18px;
 }
